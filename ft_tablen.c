@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajodin <ajodin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/24 08:42:00 by ajodin            #+#    #+#             */
-/*   Updated: 2015/02/24 23:42:00 by ajodin           ###   ########.fr       */
+/*   Created: 2015/02/24 14:00:48 by pdecrat           #+#    #+#             */
+/*   Updated: 2015/02/24 14:05:59 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh1.h"
 
-int 			ft_tablen(char **cmd)
+int			ft_tablen(char **cmd)
 {
-	int i;
+	int		i;
 
 	i = 0;
-	while(cmd[i])
+	while (cmd[i])
 		i++;
 	return (i);
 }

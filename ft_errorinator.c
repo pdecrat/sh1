@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/23 16:33:06 by pdecrat           #+#    #+#             */
-/*   Updated: 2015/02/23 16:33:09 by pdecrat          ###   ########.fr       */
+/*   Created: 2015/02/24 13:48:18 by pdecrat           #+#    #+#             */
+/*   Updated: 2015/02/24 13:59:12 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh1.h"
-#include "libft.h"
 
 void	ft_errorinette(const char *cmd, const char *error)
 {

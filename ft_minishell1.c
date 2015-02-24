@@ -6,7 +6,7 @@
 /*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 12:38:08 by pdecrat           #+#    #+#             */
-/*   Updated: 2015/02/21 19:10:18 by pdecrat          ###   ########.fr       */
+/*   Updated: 2015/02/24 14:04:40 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,15 @@ int			main(int ac, char **av, char **env)
 	t_pcmd	*lst;
 	char	**e;
 
+	(void)ac;
+	(void)av;
 	line = NULL;
 	e = (*env) ? ft_getenv(env) : ft_make_env();
 	ft_shlvl(e);
 	lst = ft_parse_cmd_init();
 	signal(SIGINT, ft_signaler);
 	signal(SIGQUIT, ft_signaler);
+	signal(SIGTSTP, ft_signaler);
 	ft_putprompt(e);
 	while (get_next_line(0, &line) > 0)
 	{

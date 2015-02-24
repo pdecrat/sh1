@@ -6,7 +6,7 @@
 /*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/23 16:35:42 by pdecrat           #+#    #+#             */
-/*   Updated: 2015/02/23 16:35:43 by pdecrat          ###   ########.fr       */
+/*   Updated: 2015/02/24 14:08:22 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ char			**ft_make_env(void);
 void			ft_tabdel(char **tab);
 char			**ft_get_home(char **cmd, char **env);
 char			**ft_cd(char **cmd, char **env);
-int			ft_tablen(char **tab);
+int				ft_tablen(char **tab);
 
 #endif

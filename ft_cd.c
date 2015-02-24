@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cd.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajodin <ajodin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/23 08:42:00 by ajodin            #+#    #+#             */
-/*   Updated: 2015/02/23 23:42:00 by ajodin           ###   ########.fr       */
+/*   Created: 2015/02/24 13:52:49 by pdecrat           #+#    #+#             */
+/*   Updated: 2015/02/24 14:11:35 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <unistd.h>
 #include <dirent.h>
 
-char 			**ft_change_working_directory(char **env, char *cmd)
+char		**ft_change_working_directory(char **env)
 {
-	char *tmp;
+	char	*tmp;
 	int		i;
 
-	if ((i = ft_find_value("OLDPWD", env) != -1)
+	if (((i = ft_find_value("OLDPWD", env)) != -1)
 			&& (ft_find_value("PWD", env) != -1))
 	{
 		tmp = ft_strjoin("OLDPWD=", ft_getvalue("PWD", env));
@@ -34,7 +34,7 @@ char 			**ft_change_working_directory(char **env, char *cmd)
 	return (env);
 }
 
-char			**ft_check_home(char **cmd, char **env, int len)
+char		**ft_check_home(char **cmd, char **env, int len)
 {
 	if (len == 1)
 	{
@@ -44,10 +44,10 @@ char			**ft_check_home(char **cmd, char **env, int len)
 	return ((cmd = ft_get_home(cmd, env)) ? cmd : NULL);
 }
 
-char 			**ft_process_cd(char **cmd, char **env)
+char		**ft_process_cd(char **cmd, char **env)
 {
 	DIR		*dip;
-	char 	*tmp;
+	char	*tmp;
 
 	tmp = NULL;
 	if (cmd[1] && cmd[1][0] != '/')
@@ -61,16 +61,15 @@ char 			**ft_process_cd(char **cmd, char **env)
 	{
 		closedir(dip);
 		chdir(cmd[1]);
-		env = ft_change_working_directory(env, cmd[1]);
+		env = ft_change_working_directory(env);
 	}
 	else
 		ft_putendl_fd("cd : Could not open this directory", 2);
 	return (env);
 }
 
-char 			**ft_cd(char **cmd, char **env)
+char		**ft_cd(char **cmd, char **env)
 {
-
 	int		len;
 
 	if ((len = ft_tablen(cmd)) > 2)

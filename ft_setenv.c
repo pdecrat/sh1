@@ -6,7 +6,7 @@
 /*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 14:21:34 by pdecrat           #+#    #+#             */
-/*   Updated: 2015/02/21 19:03:36 by pdecrat          ###   ########.fr       */
+/*   Updated: 2015/02/24 14:00:08 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char		**ft_setenv(char **cmd, char **e)
 	if (!cmd[1])
 		ft_env(cmd, e);
 	else if (ft_strchr(cmd[1], '='))
-		ft_putendl_fd("ft_setenv : Invalid argmuents.", 2);
+		ft_putendl_fd("ft_setenv : Invalid arguments.", 2);
 	else if (cmd[2] && cmd[3])
 		ft_putendl_fd("ft_setenv : Too many arguments.", 2);
 	else

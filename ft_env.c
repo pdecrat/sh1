@@ -6,7 +6,7 @@
 /*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:16:01 by pdecrat           #+#    #+#             */
-/*   Updated: 2015/02/23 16:49:05 by pdecrat          ###   ########.fr       */
+/*   Updated: 2015/02/24 14:04:17 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char		**ft_env(char **cmd, char **e)
 {
 	int		i;
 
-	(void)cmd;
 	i = 0;
+	(void)cmd;
 	while (e[i])
 	{
 		ft_putendl(e[i]);

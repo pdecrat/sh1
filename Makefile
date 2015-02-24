@@ -17,7 +17,8 @@ SRC = ft_array_realloc.c \
 	  ft_shlvl.c \
 	  ft_tabdel.c \
 	  ft_unsetenv.c \
-	ft_cd.c
+	  ft_cd.c \
+	  ft_tablen.c
 
 INCLUDES = ft_sh1.h
 

@@ -5,15 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/23 16:34:55 by pdecrat           #+#    #+#             */
-/*   Updated: 2015/02/23 17:29:43 by pdecrat          ###   ########.fr       */
+/*   Created: 2015/02/24 13:50:43 by pdecrat           #+#    #+#             */
+/*   Updated: 2015/02/24 14:07:58 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh1.h"
 #include "libft.h"
-#include "libft.h"
-#include "ft_sh1.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -67,13 +65,13 @@ static char	*ft_process_directory(char *path, char *cmd)
 
 int			ft_process_envfunk(char **env, char **cmd)
 {
-	char	**tabpath;
-	char	*bin;
-	int		ret;
-	char	*path;
+	char		**tabpath;
+	char		*bin;
+	int			ret;
+	char		*path;
 
-	tabpath = ((path = ft_getvalue("PATH", env))) ? ft_strsplit(path, ':') :
-			ft_getdefaultpath();
+	path = ft_getvalue("PATH", env);
+	tabpath = (path) ? ft_strsplit(path, ':') : ft_getdefaultpath();
 	if ((ret = open(cmd[0], O_RDONLY)) > 0)
 	{
 		bin = ft_strdup(cmd[0]);

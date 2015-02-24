@@ -6,7 +6,7 @@
 /*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 17:39:47 by pdecrat           #+#    #+#             */
-/*   Updated: 2015/02/23 17:03:03 by pdecrat          ###   ########.fr       */
+/*   Updated: 2015/02/24 14:00:56 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,12 @@ static char		**ft_copy_env(char *cmd, char **old)
 	{
 		if (!(ft_strncmp(cmd, old[i + j], size))
 					&& old[i + j][size] == '=')
-		{
-			free(old[i + j]);
-			++j;
-		}
+			free(old[i + j++]);
 		if (old[i + j])
+		{
 			new[i] = ft_strdup(old[i + j]);
-		free(old[i + j]);
-		++i;
+			free(old[i++ + j]);
+		}
 	}
 	free(old);
 	new[i] = NULL;
