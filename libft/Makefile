@@ -17,6 +17,7 @@ FLAGS = -Werror -Wextra -Wall
 SRC = 		ft_memalloc.c \
 			get_next_line.c \
 			ft_memdel.c \
+			ft_strsplitblank.c \
 			ft_strchri.c \
 			ft_putchar.c \
 			ft_putchar_fd.c \

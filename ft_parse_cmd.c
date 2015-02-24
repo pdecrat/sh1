@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_cmd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajodin <ajodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/23 16:34:26 by pdecrat           #+#    #+#             */
-/*   Updated: 2015/02/23 16:59:07 by pdecrat          ###   ########.fr       */
+/*   Created: 2015/02/18 08:42:00 by ajodin            #+#    #+#             */
+/*   Updated: 2015/02/23 16:07:17 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static t_pcmd	*ft_name_init(t_pcmd *lst)
 static t_pcmd	*ft_funk_init(t_pcmd *lst)
 {
 	lst[0].f = ft_exit;
-//	lst[1].f = ft_cd;
+	lst[1].f = ft_cd;
 	lst[2].f = ft_setenv;
 	lst[3].f = ft_unsetenv;
 	lst[4].f = ft_env;
@@ -54,7 +54,7 @@ int				ft_parse_cmd(char *line, t_pcmd *lst, char ***env)
 		line++;
 	if (!*line)
 		return (0);
-	cmd = ft_strsplit(line, ' ');
+	cmd = ft_strsplitblank(line);
 	while (lst[i].name && ft_strcmp(cmd[0], lst[i].name) != 0)
 		i++;
 	if (lst[i].name)

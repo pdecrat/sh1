@@ -6,7 +6,7 @@
 /*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 14:21:34 by pdecrat           #+#    #+#             */
-/*   Updated: 2015/02/23 16:35:01 by pdecrat          ###   ########.fr       */
+/*   Updated: 2015/02/21 19:03:36 by pdecrat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ char		**ft_change_env(char **cmd, char **e)
 	int		i;
 
 	i = ft_find_value(cmd[1], e);
+	i = (i > 0) ? i : ft_tablen(e);
 	if (e[i])
 		free(e[i]);
 	else

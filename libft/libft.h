@@ -25,6 +25,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+char				**ft_strsplitblank(char const *s);
 int					ft_strchri(char const *s, int c);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);

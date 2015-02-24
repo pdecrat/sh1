@@ -45,5 +45,7 @@ char			**ft_unsetenv(char **cmd, char **env);
 char			**ft_make_env(void);
 void			ft_tabdel(char **tab);
 char			**ft_get_home(char **cmd, char **env);
+char			**ft_cd(char **cmd, char **env);
+int			ft_tablen(char **tab);
 
 #endif

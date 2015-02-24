@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_value.c                                    :+:      :+:    :+:   */
+/*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdecrat <pdecrat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajodin <ajodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/21 15:43:17 by pdecrat           #+#    #+#             */
-/*   Updated: 2015/02/21 19:31:41 by pdecrat          ###   ########.fr       */
+/*   Created: 2015/02/24 08:42:00 by ajodin            #+#    #+#             */
+/*   Updated: 2015/02/24 23:42:00 by ajodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh1.h"
 
-int		ft_find_value(char *to_find, char **e)
+int 			ft_tablen(char **cmd)
 {
-	int		size;
-	int		i;
+	int i;
 
 	i = 0;
-	size = ft_strlen(to_find);
-	while (e[i])
-	{
-		if (!(ft_strncmp(to_find, e[i], size)) && e[i][size] == '=')
-			break ;
-		++i;
-	}
-	if (i == ft_tablen(e))
-		return (-1);
+	while(cmd[i])
+		i++;
 	return (i);
 }

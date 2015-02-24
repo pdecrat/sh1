@@ -26,7 +26,7 @@ char		**ft_strsplit(char const *s, char c)
 		return (NULL);
 	word_nb = ft_countword(s, c);
 	tab_nb = 0;
-	if (!(res = (char **)ft_memalloc(sizeof(res) * word_nb + 1)))
+	if (!(res = (char **)ft_memalloc(sizeof(res) * (word_nb + 1))))
 		return (NULL);
 	while (tab_nb < word_nb)
 	{
